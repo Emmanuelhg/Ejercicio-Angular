@@ -1,0 +1,38 @@
+<div class="calendario row">
+
+    <div class="col-lg-6">
+        <div class="content col-lg-9">
+
+            <p>Selecciona una fecha</p>
+
+            <form #dataDay="ngForm" (ngSubmit)="getCalendary(dataDay)">
+                <input  id="date" type="date" >
+                <p>Cantidad de años a sumar</p>
+                <input type="number" class="form-control appended-form-control "
+                name="number" [(ngModel)]="calendary.dayPlus" placeholder="Ejemplo:1..2..3" min="1" required="">
+                <button type="submit" class="btn btn-primary btn-block">Sumar</button>
+            </form>
+            
+        </div>
+    </div>
+
+    
+    <div class="col-lg-6">
+        <table class="customers">
+            <tr>
+              <th>Fechas</th>
+            </tr>
+
+            <tr *ngFor="let day of days">
+              <td *ngIf="days != ''">{{day }}</td>
+             
+            </tr>
+            <tr *ngIf="days.length == 0">
+                <td >No hay fechas ingresadas</td>
+              </tr>
+        </table>
+    </div>
+
+</div>
+
+

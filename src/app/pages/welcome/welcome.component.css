@@ -1,0 +1,42 @@
+.div-welcome{
+    background-size: 100%;
+    background-image: url('https://www.w3schools.com/howto/img_nature_wide.jpg');
+    background-attachment: fixed;
+    height: 53%;
+    text-align: center;
+    background-repeat: no-repeat;
+}
+
+.div-title h1 {
+    margin: 5px;
+    font-size: 35px;
+    color: white;
+    padding-top: 10%;
+    margin-bottom: 2%;
+    font-weight: 800;
+}
+.h2-a{
+    color: #F4D03F !important;
+}
+.div-welcome p {
+    margin: auto;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 4%;
+}
+.div-welcome a {
+    margin: auto;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 30px;
+    color: white;
+    padding: 1%;
+    cursor: pointer;
+}
+.name{
+    text-align: center;
+    margin-top: 3%;
+    font-size: 30px;
+    width: 100%;
+    height: 100px;
+}

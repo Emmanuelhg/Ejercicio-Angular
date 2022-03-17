@@ -1,0 +1,34 @@
+<div class="row" style="top: 0px; position: absolute; background: white; width: 100%;">
+    <div class="col-lg-5 mx-auto" style="display: flex;align-items: center;">
+        <div class="modal-body px-md-5 px-4">
+            <h3 class="modal-title mt-4 mb-0 text-center mb-5">Iniciar Sesión</h3>
+            <p class="font-size-sm text-muted text-center">
+                Inicie sesión en su cuenta utilizando el correo electrónico y la contraseña proporcionados durante el registro.
+            </p>
+            <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+                <div class="form-group">
+                <label for="signin-email">Email</label>
+                <input type="text" class="form-control" name="email" [(ngModel)]="user.email"
+                placeholder="Correo electrónico" required="">
+                </div>
+                <div class="form-group">
+                <label for="signin-password" class="form-label">Password</label>
+                <div class="cs-password-toggle input-group-overlay">
+                    <input type="password" class="form-control appended-form-control"
+                    name="password" [(ngModel)]="user.password" placeholder="Contraseña" required="">
+                    <div class="input-group-append-overlay">
+                    <label class="btn cs-password-toggle-btn input-group-text">
+                        <input type="checkbox" class="custom-control-input">
+                        <i class="cxi-eye cs-password-toggle-indicator"></i>
+                        <span class="sr-only">Show password</span>
+                    </label>
+                    </div>
+                </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Inicar Sesión</button>
+                
+            </form>
+            </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="content col-6">
+    <form #getData="ngForm" (ngSubmit)="getForm(getData)">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Nombre(s) <p style="color: red;">*</p></label>
+            <input type="text" name="nombres" required class="form-control"
+            [(ngModel)]="formUser.nombres" placeholder="nombres" #name (change)="getname(name.value)">
+    
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Apellido(s) <p style="color: red;">*</p></label>
+            <input type="text" required class="form-control" name="apellidos" 
+            [(ngModel)]="formUser.apellidos" placeholder="apellidos" #apellidos (change)="getapellidos(apellidos.value)">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">¿Fumas? <p style="color: red;">*</p></label>
+            <select class="form-control" required name="fumas" [(ngModel)]="formUser.fumas">
+                <option>Si</option>
+                <option>No</option>
+            </select>
+            <div class="valid-feedback">Validado. <p style="color: red;">*</p></div>
+
+        </div> 
+        <div class="form-group">
+            <label for="exampleInputEmail1">¿Actualmente Practicas Lectura? <p style="color: red;">*</p></label>
+            <select class="form-control" required name="actualmentePracticasLectura" #on (change)="yesOrNot(on.value)"
+            [(ngModel)]="formUser.actualmentePracticasLectura">
+              <option>Si</option>
+              <option>No</option>
+            </select>
+        </div>
+        <div class="form-group" *ngIf="preload">
+            <label for="exampleInputEmail1">Libros leídos en los últimos tres meses <p style="color: red;">*</p></label>
+            <input type="text" required value="dsrgd"class="form-control" name="librosLeidosUltimosTresMeses" id="libros"
+            [(ngModel)]="formUser.librosLeidosUltimosTresMeses" value="{{resetForm}}" placeholder="Escribe los libros"
+            >
+            <small id="emailHelp" class="form-text text-muted">Nombre de libros + enter para agregar libro</small>
+            <div class="contente-libros" >
+                <a class="libros" *ngFor="let li of libros">{{li}}</a>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Estado civil</label>
+            <select class="form-control"   name="estadoCivil" [(ngModel)]="formUser.estadoCivil">
+                <option *ngFor="let status of maritalStatus">{{status}}</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">
+            Enviar
+        </button>
+    </form>
+
+    
+</div>
+
+

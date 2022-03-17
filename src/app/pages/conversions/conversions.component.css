@@ -1,0 +1,11 @@
+.title-conversion h1{
+    font-size: 30px;
+    background: linear-gradient(#e66465, #9198e5);
+    color: white;
+    text-align: center;
+    height: 300px;
+    height: 90vh;
+}
+.title {
+    padding-top: 5%;
+}

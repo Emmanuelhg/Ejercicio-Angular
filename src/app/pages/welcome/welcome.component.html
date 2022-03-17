@@ -1,0 +1,61 @@
+<div class="div-welcome">
+    <div class="div-title" style="display: flex; justify-content: center;">
+        <h1 >Bienvenido a </h1> <h1 class="h2-a">mi portal</h1>
+    </div>
+    
+    <p>Nos prodrías indicar tu nombre</p>
+
+    <a data-toggle="modal" data-target="#staticBackdrop">Escribe tu nombre</a>
+    
+    
+</div>
+
+<div class="name">
+    <h1 *ngIf="preload">Tu nombre es: {{value | cambioLetras}}</h1>
+</div>
+
+<!-- Modal Ingresar nombre -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" 
+role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+    <div class="modal-dialog" role="document">
+
+      <div class="modal-content">
+
+        <div class="modal-header" style="background:#3c8dbc;">
+
+            <h1 class="modal-title" style="color:white;">
+                ¡Hola! 
+            </h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+        </div>
+        <form #nombreUsuario="ngForm" (ngSubmit)="getNomber(nombreUsuario)">
+            <div class="modal-body">
+                
+                <h2>Por favor Ingresar tu nombre</h2>
+                <input type="text" class="form-control" name="nombre" [(ngModel)]="userName.username"
+                placeholder="Correo electrónico" required="">
+                
+            </div>
+
+            <div class="modal-footer">
+
+                <div style="display:flex;">
+
+                    <div class="col-6 submtit">
+                        <button type="submit"  class="btn btn-primary">Guardar</button>
+                    </div>
+
+                </div>
+                
+            </div>
+        </form>
+
+      </div>
+
+    </div>
+
+</div>
